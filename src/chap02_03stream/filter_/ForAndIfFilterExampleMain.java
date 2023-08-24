@@ -1,9 +1,9 @@
-package chap02_03stream.foreach;
+package chap02_03stream.filter_;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForIterationExampleMain {
+public class ForAndIfFilterExampleMain {
     public static void main(String[] args) {
         List<Integer> integerList = new ArrayList<>();
 
@@ -15,13 +15,16 @@ public class ForIterationExampleMain {
         integerList.add(60);
         integerList.add(70);
 
-        for(int i = 0; i < integerList.size(); i++){
+        Integer findNumber = null;
+
+        for (int i = 0; i < integerList.size(); i++) {
             System.out.println(integerList.get(i));
-            if(integerList.get(i) == 40){
-                System.out.println("40 찾았다");
+
+            if(integerList.get(i).equals(40)){
+                findNumber = integerList.get(i);
                 break;
             }
         }
-
+        System.out.println("findNumber=" + findNumber);
     }
 }
